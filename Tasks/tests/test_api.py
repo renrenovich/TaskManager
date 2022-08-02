@@ -53,7 +53,6 @@ class UpdateTaskTestCase(APITestCase):
                                            data=json.dumps(valid_payload),
                                            content_type='application/json')
         response1 = self.client.get(reverse('get_single_task', kwargs={'pk': 1}))
-        print(response1.data)
         self.assertEqual(status.HTTP_204_NO_CONTENT, response.status_code)
 
     def test_invalid_update(self):
